@@ -30,20 +30,23 @@ if (isset($_SESSION['user'])) { ?>
 
             <h1 class="text-bold my-auto">Finish up setting up your account</h1>
 
-            <form action="#" method="post">
+            <form action="accounts.php" method="post">
+                <!-- NAME -->
                 <div class="mb-3">
                     <label for="nameText" class="form-label">Name</label>
                     <input type="text" class="form-control" id="nameText" name="name" required>
                 </div>
 
-                <select class="form-select mb-3" required>
+                <!-- GENDER -->
+                <select class="form-select mb-3" name="gender" required>
                     <option selected>Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="none">Prefer not to say</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="N/A">Prefer not to say</option>
                 </select>
 
-                <select class="form-select mb-3" required>
+                <!-- SECTION -->
+                <select class="form-select mb-3" name="section" required>
                     <option selected>Section</option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -53,18 +56,21 @@ if (isset($_SESSION['user'])) { ?>
                     <option value="F">F</option>
                 </select>
 
-                <select class="form-select mb-3" required>
+                <!-- DEPARTMENT -->
+                <select class="form-select mb-3" name="department" required>
                     <option selected>Department</option>
-                    <option value="1">Accounting</option>
-                    <option value="2">Marketing</option>
-                    <option value="3">Computer Science</option>
+                    <option value="Accounting">Accounting</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Computer Science">Computer Science</option>
                 </select>
 
+                <!-- ID -->
                 <div class="mb-3">
                     <label for="numberText" class="form-label">ID</label>
                     <input type="text" pattern="^[0-9]+$" name="id" id="numberText" class="form-control" required>
                 </div>
 
+                <!-- SUBMIT -->
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
 

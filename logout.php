@@ -3,6 +3,4 @@
 session_start();
 session_destroy();
 
-?>
-
-<h3>Logged out</h3>
+header('location:code.php');
