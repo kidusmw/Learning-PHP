@@ -5,16 +5,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $gender = $_POST['gender'];
     $section = $_POST['section'];
     $department = $_POST['department'];
-    $id = $_POST['id'];
+    $idText = explode('/', $_POST['id']);
 }
 
-$accounts = [
-    "NAME" => $name,
-    "GENDER" => $gender,
-    "SECTION" => $section,
-    "DEPARTMENT" => $department,
-    "ID" => $id
-];
+$id = $idText[1];
+$accounts = compact('name', 'gender', 'section', 'department', 'id');
 
 $key = array_keys($accounts);
 

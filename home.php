@@ -67,7 +67,7 @@ if (isset($_SESSION['user'])) { ?>
                 <!-- ID -->
                 <div class="mb-3">
                     <label for="numberText" class="form-label">ID</label>
-                    <input type="text" pattern="^[0-9]+$" name="id" id="numberText" class="form-control" required>
+                    <input type="text" name="id" id="numberText" class="form-control" required>
                 </div>
 
                 <!-- SUBMIT -->
