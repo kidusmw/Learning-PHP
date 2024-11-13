@@ -1,17 +1,27 @@
 <?php
 
+session_start();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = $_POST['name'];
+    $firstName = $_POST['fname'];
+    $lastName = $_POST['lname'];
+    $userName = $_POST['username'];
+    $city = $_POST['city'];
     $gender = $_POST['gender'];
+    $zip = $_POST['zip'];
     $section = $_POST['section'];
     $department = $_POST['department'];
     $idText = explode('/', $_POST['id']);
+    $fileName = $_FILES['file']['name'];
+    $filePath = $_FILES['file']['tmp_name'];
 }
 
 $id = $idText[1];
-$accounts = compact('name', 'gender', 'section', 'department', 'id');
+$accounts = compact('firstName', 'lastName', 'userName', 'city', 'gender', 'zip', 'section', 'department', 'id', 'fileName');
 
 $key = array_keys($accounts);
+
+move_uploaded_file($filePath, './uploads/' . $fileName);
 
 ?>
 

@@ -26,52 +26,87 @@ if (isset($_SESSION['user'])) { ?>
             </ul>
         </nav>
 
-        <section class="border border-3 border-primary d-flex justify-content-around m-4 p-4">
+        <section class="border border-3 border-primary  m-4 p-4">
 
             <h1 class="text-bold my-auto">Finish up setting up your account</h1>
 
-            <form action="accounts.php" method="post">
-                <!-- NAME -->
-                <div class="mb-3">
-                    <label for="nameText" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="nameText" name="name" required>
+            <form action="accounts.php" class="row g-3 needs-validation" method="post" enctype="multipart/form-data">
+
+                <!-- FIRST NAME -->
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip01" class="form-label">First name</label>
+                    <input type="text" class="form-control" name="fname" required>
+                </div>
+
+                <!-- LAST NAME -->
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip02" class="form-label">Last name</label>
+                    <input type="text" class="form-control" name="lname" required>
+                </div>
+
+                <!-- USERNAME -->
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltipUsername" class="form-label">Username</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" name="username" required>
+                    </div>
                 </div>
 
                 <!-- GENDER -->
-                <select class="form-select mb-3" name="gender" required>
-                    <option selected>Gender</option>
-                    <option value="Male">Male</option>
+                <label for="Gender">Gender</label>
+                <select class="form-select" aria-label="Default select example"
+                    name="gender">
+                    <option selected value="Male">Male</option>
                     <option value="Female">Female</option>
-                    <option value="N/A">Prefer not to say</option>
+                    <option value="NaN">Prefer Not to say</option>
                 </select>
 
                 <!-- SECTION -->
-                <select class="form-select mb-3" name="section" required>
-                    <option selected>Section</option>
-                    <option value="A">A</option>
+                <label for="Section">Section</label>
+                <select class="form-select" aria-label="Default select example" name="section">
+                    <option selected value="A">A</option>
                     <option value="B">B</option>
                     <option value="C">C</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                    <option value="F">F</option>
                 </select>
 
                 <!-- DEPARTMENT -->
-                <select class="form-select mb-3" name="department" required>
-                    <option selected>Department</option>
-                    <option value="Accounting">Accounting</option>
-                    <option value="Marketing">Marketing</option>
+                <label for="Gender">Department</label>
+                <select class="form-select" aria-label="Default select example" name="department">
+                    <option selected value="Accounting">Accounting</option>
                     <option value="Computer Science">Computer Science</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Management">Management</option>
                 </select>
 
-                <!-- ID -->
-                <div class="mb-3">
-                    <label for="numberText" class="form-label">ID</label>
-                    <input type="text" name="id" id="numberText" class="form-control" required>
+                <!-- CITY -->
+                <div class="col-md-6 position-relative">
+                    <label for="validationTooltip03" class="form-label">City</label>
+                    <input type="text" class="form-control" name="city" required>
                 </div>
 
-                <!-- SUBMIT -->
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <!-- ZIP -->
+                <div class="col-md-3 position-relative">
+                    <label for="validationTooltip05" class="form-label">Zip</label>
+                    <input type="text" class="form-control" name="zip" required>
+                </div>
+
+                <!-- ID -->
+                <div class="col-md-3 position-relative">
+                    <label for="validationTooltip05" class="form-label">ID</label>
+                    <input type="text" class="form-control" name="id" required>
+                </div>
+
+                <!-- IMAGE -->
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Default file input example</label>
+                    <input class="form-control" type="file" name="file" id="formFile">
+                </div>
+
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit" value="upload">Submit</button>
+                </div>
+
             </form>
 
         </section>
