@@ -33,10 +33,10 @@ move_uploaded_file($filePath, './uploads/' . $fileName);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <title>Accounts Page</title>
+    <title>User Profile</title>
 </head>
 
-<body>
+<body class="bg-light">
     <!-- NAV BAR -->
     <nav class="bg-primary-subtle p-2">
         <ul class="nav nav-pills justify-content-end">
@@ -47,23 +47,32 @@ move_uploaded_file($filePath, './uploads/' . $fileName);
             </li>
         </ul>
     </nav>
+    <!-- CARD PROFILE -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
 
-    <table class="table table-striped-columns">
-        <!-- HEADER ROW -->
-        <tr>
-            <?php
-            foreach ($key as $k) { ?>
-                <th scope="col"><?php echo $k ?></th>
-            <?php }
-            ?>
-        </tr>
-        <!-- DATA ROW -->
-        <?php
-        foreach ($accounts as $account) { ?>
-            <td><?php echo $account ?></td>
-        <?php }
-        ?>
-    </table>
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">User Profile<h2>
+                                <!-- IMAGE HOLDER -->
+                                <div class="text-center mb-4">
+                                    <img src="<?php echo './uploads/' . $fileName; ?>" alt="Profile Picture" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                                </div>
+                                <!-- LIST -->
+                                <ul class="list-group list-group-flush">
+                                    <?php foreach ($accounts as $key => $value) { ?>
+                                        <li class="list-group-item fs-6 fw-light">
+                                            <?php echo ucfirst($key); ?>: <?php echo $value; ?>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
